@@ -18,7 +18,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.QuestionViewHolder
 
     public class QuestionViewHolder extends RecyclerView.ViewHolder {
 
-        CardView cv;
+        CardView question_radiobutton;
         TextView question;
         ImageView illustration;
         RadioButton buttonA;
@@ -28,7 +28,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.QuestionViewHolder
 
         QuestionViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.cv);
+            question_radiobutton = (CardView)itemView.findViewById(R.id.question_radiobutton);
             question = (TextView)itemView.findViewById(R.id.question);
             illustration = (ImageView)itemView.findViewById(R.id.illustration);
             buttonA = (RadioButton) itemView.findViewById(R.id.option_a);
@@ -50,15 +50,17 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.QuestionViewHolder
 
     @Override
     public QuestionViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.question, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.question_radiobutton, viewGroup, false);
         QuestionViewHolder qvh = new QuestionViewHolder(v);
         return qvh;
     }
 
     @Override
     public void onBindViewHolder(QuestionViewHolder personViewHolder, int i) {
+
         personViewHolder.question.setText(questions.get(i).question);
         personViewHolder.illustration.setImageResource(questions.get(i).photoId);
+
         personViewHolder.buttonA.setText(questions.get(i).option_a);
         personViewHolder.buttonB.setText(questions.get(i).option_b);
         personViewHolder.buttonC.setText(questions.get(i).option_c);

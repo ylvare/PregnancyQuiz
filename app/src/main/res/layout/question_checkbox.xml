@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/question_checkbox"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:id="@+id/illustration"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/glad_ylva"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/question"
+            android:layout_toRightOf="@+id/illustration"
+            android:layout_alignParentTop="true"
+            android:text="Hur ofta slår hjärtat på ett barn?"
+            android:layout_marginBottom="10dp"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/illustration"
+            android:layout_below="@+id/question">
+
+            <RadioButton android:id="@+id/option-a"
+                style="@style/MyRaidoButtonTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ylva Rehnberg"
+                android:onClick="answerA"/>
+
+            <RadioButton
+                android:id="@+id/option-b"
+                style="@style/MyRaidoButtonTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="answerB" />
+
+            <RadioButton android:id="@+id/option-c"
+                style="@style/MyRaidoButtonTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="answerC"/>
+
+            <RadioButton android:id="@+id/option-d"
+                style="@style/MyRaidoButtonTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="answerD" />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
