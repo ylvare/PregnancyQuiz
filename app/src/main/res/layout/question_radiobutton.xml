@@ -40,7 +40,7 @@
             android:layout_below="@+id/question">
 
             <RadioButton android:id="@+id/option-a"
-                style="@style/MyRaidoButtonTwo"
+                style="@style/MyQuestionStyling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ylva Rehnberg"
@@ -48,19 +48,19 @@
 
             <RadioButton
                 android:id="@+id/option-b"
-                style="@style/MyRaidoButtonTwo"
+                style="@style/MyQuestionStyling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="answerB" />
 
             <RadioButton android:id="@+id/option-c"
-                style="@style/MyRaidoButtonTwo"
+                style="@style/MyQuestionStyling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="answerC"/>
 
             <RadioButton android:id="@+id/option-d"
-                style="@style/MyRaidoButtonTwo"
+                style="@style/MyQuestionStyling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="answerD" />

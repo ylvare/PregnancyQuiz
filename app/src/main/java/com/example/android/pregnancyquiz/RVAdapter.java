@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -15,13 +16,27 @@ import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public class FooterVH extends RecyclerView.ViewHolder {
+
+        CardView footer;
+        Button button;
+
+        FooterVH(View itemView) {
+            super(itemView);
+            footer = (CardView) itemView.findViewById(R.id.footer);
+            button = (Button) itemView.findViewById(R.id.score);
+        }
+    }
+
+
+
     List<Object> questions;
 
     public RVAdapter(List<Object> questions) {
         this.questions = questions;
     }
 
-    private final int RADIO_BUTTON = 0, CHECK_BOX = 1;
+    private final int RADIO_BUTTON = 0, CHECK_BOX = 1, FOOTER=2;
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -39,7 +54,9 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             return RADIO_BUTTON;
         } else if (questions.get(position) instanceof CheckBoxQuestion) {
             return CHECK_BOX;
-        }
+        } else if (questions.get(position) instanceof Quiz.Footer) {
+        return FOOTER;
+    }
         return -1;
     }
 
@@ -57,6 +74,11 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             case CHECK_BOX:
                 View v2 = inflater.inflate(R.layout.question_checkbox, viewGroup, false);
                 viewHolder = new CheckBoxQuestionVH(v2);
+                break;
+
+            case FOOTER:
+                View v3 = inflater.inflate(R.layout.footer, viewGroup, false);
+                viewHolder = new FooterVH(v3);
                 break;
             default:
                 View v = inflater.inflate(R.layout.question_radiobutton, viewGroup, false);
@@ -79,6 +101,11 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 CheckBoxQuestionVH cbvh = (CheckBoxQuestionVH) viewHolder;
                 configureCheckBoxQuestionVH(cbvh, position);
                 break;
+
+            case FOOTER:
+                FooterVH fvh = (FooterVH) viewHolder;
+                break;
+
             default:
                 RadioButtonQuestionVH rbvh2 = (RadioButtonQuestionVH) viewHolder;
                 configureRadioButtonQuestionVH(rbvh2, position);

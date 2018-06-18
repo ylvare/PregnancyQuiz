@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,19 +37,34 @@ public class Quiz extends Activity {
         initializeAdapter();
     }
 
+    public String getName(){
+        String name = ((EditText) findViewById(R.id.name)).getText().toString();
+        return name;
+    }
+
+    public class Footer {
+
+        Footer(){
+        }
+    }
+
     private void initializeData(){
         questions = new ArrayList<>();
 
+        questions.add(new RadioButtonQuestion("How many beats per minute does the heart of an embryo beat when the embryo is eight weeks old?", "A",
+                "A", "150", "200", "250", "300", R.drawable.glad_ylva));
+        questions.add(new RadioButtonQuestion(
+                "In what week does the tale of the embryo disappear?","A",
+                "B", "5 weeks", "9 weeks", "12 weeks", "14 weeks", R.drawable.glad_ylva));
+        questions.add(new CheckBoxQuestion("What parts of the baby body develops faster than the legs and feets?", "A",
+                "B", "hands", "arms", "chest", "hips", R.drawable.glad_ylva));
+        questions.add(new RadioButtonQuestion("At what week does the child-to-be transform from being an embryo to a foetus in medical terms?", "A",
+                "B", "6 weeks", "11 weeks", "15 weeks", "19 weeks", R.drawable.glad_ylva));
         questions.add(new RadioButtonQuestion("How many beats per minute does the heart in an embryo beat when the embryo is eight weeks old?", "A",
-                "B", "150", "200", "250", "300", R.drawable.glad_ylva));
-        questions.add(new RadioButtonQuestion("How many beats per minute does the heart in an embryo beat when the embryo is eight weeks old?", "A",
-                "B", "150", "200", "250", "300", R.drawable.glad_ylva));
-        questions.add(new CheckBoxQuestion("How many beats per minute does the heart in an embryo beat when the embryo is eight weeks old?", "A",
-                "B", "150", "200", "250", "300", R.drawable.glad_ylva));
-        questions.add(new CheckBoxQuestion("How many beats per minute does the heart in an embryo beat when the embryo is eight weeks old?", "A",
-                "B", "150", "200", "250", "300", R.drawable.glad_ylva));
-        questions.add(new RadioButtonQuestion("How many beats per minute does the heart in an embryo beat when the embryo is eight weeks old?", "A",
-                "B", "150", "200", "250", "300", R.drawable.glad_ylva));
+                "D", "4 weeks", "12 weeks", "16 weeks", "18 weeks", R.drawable.glad_ylva));
+        questions.add(new CheckBoxQuestion("What happens typically in week 12 of the foetus development?", "A",
+                "B", "The baby can swallow", "The baby urinates for the first time", "The baby can clench his fist", "The baby can hickup", R.drawable.glad_ylva));
+        questions.add(new Footer());
 
     }
 

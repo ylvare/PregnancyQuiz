@@ -4,15 +4,14 @@
     android:orientation="vertical"
     android:padding="8dp"
     >
-
     <TextView
-        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PREGNANCY QUIZ"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="0"/>
+        android:padding="8dp"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:fontFamily="sans-serif"
+        android:text="PREGNANCY QUIZ"/>
 
 
     <android.support.v7.widget.RecyclerView

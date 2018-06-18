@@ -12,10 +12,11 @@
 
     </style>
 
-    <style name="MyRaidoButtonTwo" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="MyQuestionStyling">
         <item name="android:textSize">14sp</item>
         <item name="android:scaleX">0.9</item>
         <item name="android:scaleY">0.9</item>
     </style>
+
 
 </resources>

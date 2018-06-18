@@ -33,37 +33,42 @@
             android:layout_marginBottom="10dp"
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/illustration"
+            android:layout_below="@+id/question"
+            android:gravity="left"
+            android:orientation="vertical">
+
         <CheckBox
             android:id="@+id/option-a"
-            android:layout_width="wrap_content"
+            style="@style/MyQuestionStyling"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option A"
-            android:layout_toRightOf="@+id/illustration"
-            android:layout_below="@+id/question"/>
+            android:text="Option A" />
 
         <CheckBox
             android:id="@+id/option-b"
-            android:layout_width="wrap_content"
+            style="@style/MyQuestionStyling"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option B"
-            android:layout_toRightOf="@+id/illustration"
-            android:layout_below="@+id/option-a"/>
+            android:text="Option B" />
 
         <CheckBox
+            style="@style/MyQuestionStyling"
             android:id="@+id/option-c"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option C"
-            android:layout_toRightOf="@+id/illustration"
-            android:layout_below="@+id/option-b"/>
+            android:text="Option C" />
 
         <CheckBox
+            style="@style/MyQuestionStyling"
             android:id="@+id/option-d"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option D"
-            android:layout_toRightOf="@+id/illustration"
-            android:layout_below="@+id/option-c"/>
+            android:text="Option D asdf asdf asfd asdfasdf asdf "/>
+        </LinearLayout>
 
     </RelativeLayout>
 
