@@ -37,32 +37,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/illustration"
-            android:layout_below="@+id/question">
+            android:layout_below="@+id/question"
+            android:gravity="left">
 
             <RadioButton android:id="@+id/option-a"
                 style="@style/MyQuestionStyling"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ylva Rehnberg"
+                android:text="Option A"
                 android:onClick="answerA"/>
 
             <RadioButton
                 android:id="@+id/option-b"
                 style="@style/MyQuestionStyling"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Option B"
                 android:onClick="answerB" />
 
             <RadioButton android:id="@+id/option-c"
                 style="@style/MyQuestionStyling"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Option C"
                 android:onClick="answerC"/>
 
             <RadioButton android:id="@+id/option-d"
                 style="@style/MyQuestionStyling"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Option D"
                 android:onClick="answerD" />
         </RadioGroup>
 
