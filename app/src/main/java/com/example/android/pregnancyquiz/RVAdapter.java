@@ -29,7 +29,6 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
 
-
     List<Object> questions;
 
     public RVAdapter(List<Object> questions) {
@@ -81,8 +80,7 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 viewHolder = new FooterVH(v3);
                 break;
             default:
-                View v = inflater.inflate(R.layout.question_radiobutton, viewGroup, false);
-                viewHolder = new RadioButtonQuestionVH(v);
+                viewHolder = null;
                 break;
         }
         return viewHolder;
@@ -107,8 +105,6 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 break;
 
             default:
-                RadioButtonQuestionVH rbvh2 = (RadioButtonQuestionVH) viewHolder;
-                configureRadioButtonQuestionVH(rbvh2, position);
                 break;
         }
 

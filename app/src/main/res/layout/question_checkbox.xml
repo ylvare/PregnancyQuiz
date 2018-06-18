@@ -20,7 +20,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
-            android:src="@drawable/glad_ylva"
+            android:src="@drawable/baby"
             />
 
         <TextView
@@ -46,28 +46,32 @@
             style="@style/MyQuestionStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option A" />
+            android:text="Option A"
+            android:onClick="answerCheckBox"/>
 
         <CheckBox
             android:id="@+id/option-b"
             style="@style/MyQuestionStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option B" />
+            android:text="Option B"
+            android:onClick="answerCheckBox"/>
 
         <CheckBox
             style="@style/MyQuestionStyling"
             android:id="@+id/option-c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option C" />
+            android:text="Option C"
+            android:onClick="answerCheckBox"/>
 
         <CheckBox
             style="@style/MyQuestionStyling"
             android:id="@+id/option-d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option D asdf asdf asfd asdfasdf asdf "/>
+            android:text="Option D"
+            android:onClick="answerCheckBox"/>
         </LinearLayout>
 
     </RelativeLayout>

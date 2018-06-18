@@ -16,6 +16,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:scaleX">0.9</item>
         <item name="android:scaleY">0.9</item>
+        <item name="android:textColor">#616161</item>
     </style>
 
 

@@ -20,7 +20,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
-            android:src="@drawable/glad_ylva"
+            android:src="@drawable/baby"
             />
 
         <TextView
@@ -40,12 +40,13 @@
             android:layout_below="@+id/question"
             android:gravity="left">
 
-            <RadioButton android:id="@+id/option-a"
+            <RadioButton
+                android:id="@+id/option-a"
                 style="@style/MyQuestionStyling"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Option A"
-                android:onClick="answerA"/>
+                android:onClick="answerRadioButton"/>
 
             <RadioButton
                 android:id="@+id/option-b"
@@ -53,21 +54,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Option B"
-                android:onClick="answerB" />
+                android:onClick="answerRadioButton" />
 
-            <RadioButton android:id="@+id/option-c"
+            <RadioButton
+                android:id="@+id/option-c"
                 style="@style/MyQuestionStyling"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Option C"
-                android:onClick="answerC"/>
+                android:onClick="answerRadioButton"/>
 
-            <RadioButton android:id="@+id/option-d"
+            <RadioButton
+                android:id="@+id/option-d"
                 style="@style/MyQuestionStyling"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Option D"
-                android:onClick="answerD" />
+                android:onClick="answerRadioButton" />
         </RadioGroup>
 
     </RelativeLayout>

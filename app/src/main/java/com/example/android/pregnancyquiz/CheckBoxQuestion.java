@@ -3,18 +3,18 @@ package com.example.android.pregnancyquiz;
 public class CheckBoxQuestion {
 
     String question;
-    String answer_entered;
-    String correct_answers;
+    Boolean [] answers_entered;
+    Boolean [] correct_answers;
     String option_a;
     String option_b;
     String option_c;
     String option_d;
     int photoId;
 
-    CheckBoxQuestion(String question, String answer_entered, String correct_answer, String option_a, String option_b, String option_c, String option_d, int photoId) {
+    CheckBoxQuestion(String question, Boolean answers_entered[], Boolean correct_answers[], String option_a, String option_b, String option_c, String option_d, int photoId) {
         this.question = question;
-        this.answer_entered = answer_entered;
-        this.correct_answers = correct_answer;
+        this.answers_entered = answers_entered;
+        this.correct_answers = correct_answers;
         this.option_a=option_a;
         this.option_b=option_b;
         this.option_c=option_c;

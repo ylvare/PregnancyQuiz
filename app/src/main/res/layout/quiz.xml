@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
-    >
+    android:padding="8dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:textSize="30sp"
-        android:gravity="center"
         android:fontFamily="sans-serif"
-        android:text="PREGNANCY QUIZ"/>
+        android:gravity="left"
+        android:padding="8dp"
+        android:text="PREGNANCY QUIZ"
+        android:textSize="30sp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#616161" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
         android:id="@+id/rv"
-        android:layout_weight="4"
-        >
-    </android.support.v7.widget.RecyclerView>
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
 
