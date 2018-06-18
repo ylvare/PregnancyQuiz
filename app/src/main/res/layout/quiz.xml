@@ -5,14 +5,32 @@
     android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:gravity="left"
-        android:padding="8dp"
-        android:text="PREGNANCY QUIZ"
-        android:textSize="30sp" />
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:text="PREGNANCY"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:text="QUIZ"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"

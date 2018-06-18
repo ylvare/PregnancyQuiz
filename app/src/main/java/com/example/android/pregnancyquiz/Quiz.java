@@ -151,7 +151,7 @@ public class Quiz extends Activity {
         Context context = getApplicationContext();
         int nrQuestions = questions.size()-1;
         String name = ((EditText) findViewById(R.id.name)).getText().toString();
-        String text =  name + " , you got " + score + " points out of " + nrQuestions + " possible!";
+        String text =  name + ", you got " + score + " points out of " + nrQuestions + " possible!";
         //CharSequence text = "Invalid order quantity";
 
         int duration = Toast.LENGTH_LONG;
