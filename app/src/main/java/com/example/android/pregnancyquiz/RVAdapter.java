@@ -12,36 +12,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-//public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.QuestionViewHolder> {
+public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public class QuestionViewHolder extends RecyclerView.ViewHolder {
+    List<Object> questions;
 
-        CardView question_radiobutton;
-        TextView question;
-        ImageView illustration;
-        RadioButton buttonA;
-        RadioButton buttonB;
-        RadioButton buttonC;
-        RadioButton buttonD;
-
-        QuestionViewHolder(View itemView) {
-            super(itemView);
-            question_radiobutton = (CardView)itemView.findViewById(R.id.question_radiobutton);
-            question = (TextView)itemView.findViewById(R.id.question);
-            illustration = (ImageView)itemView.findViewById(R.id.illustration);
-            buttonA = (RadioButton) itemView.findViewById(R.id.option_a);
-            buttonB = (RadioButton) itemView.findViewById(R.id.option_b);
-            buttonC = (RadioButton) itemView.findViewById(R.id.option_c);
-            buttonD = (RadioButton) itemView.findViewById(R.id.option_d);
-        }
-    }
-
-    List<Question2> questions;
-    RVAdapter(List<Question2> questions){
+    public RVAdapter(List<Object> questions) {
         this.questions = questions;
     }
+
+    private final int RADIO_BUTTON = 0, CHECK_BOX = 1;
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -49,32 +29,95 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.QuestionViewHolder
     }
 
     @Override
-    public QuestionViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.question_radiobutton, viewGroup, false);
-        QuestionViewHolder qvh = new QuestionViewHolder(v);
-        return qvh;
-    }
-
-    @Override
-    public void onBindViewHolder(QuestionViewHolder personViewHolder, int i) {
-
-        personViewHolder.question.setText(questions.get(i).question);
-        personViewHolder.illustration.setImageResource(questions.get(i).photoId);
-
-        personViewHolder.buttonA.setText(questions.get(i).option_a);
-        personViewHolder.buttonB.setText(questions.get(i).option_b);
-        personViewHolder.buttonC.setText(questions.get(i).option_c);
-        personViewHolder.buttonD.setText(questions.get(i).option_d);
-
-        personViewHolder.buttonA.setTag(i);
-        personViewHolder.buttonB.setTag(i);
-        personViewHolder.buttonC.setTag(i);
-        personViewHolder.buttonD.setTag(i);
-    }
-
-    @Override
     public int getItemCount() {
         return questions.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (questions.get(position) instanceof RadioButtonQuestion) {
+            return RADIO_BUTTON;
+        } else if (questions.get(position) instanceof CheckBoxQuestion) {
+            return CHECK_BOX;
+        }
+        return -1;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+
+        RecyclerView.ViewHolder viewHolder;
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+
+        switch (viewType) {
+            case RADIO_BUTTON:
+                View v1 = inflater.inflate(R.layout.question_radiobutton, viewGroup, false);
+                viewHolder = new RadioButtonQuestionVH(v1);
+                break;
+            case CHECK_BOX:
+                View v2 = inflater.inflate(R.layout.question_checkbox, viewGroup, false);
+                viewHolder = new CheckBoxQuestionVH(v2);
+                break;
+            default:
+                View v = inflater.inflate(R.layout.question_radiobutton, viewGroup, false);
+                viewHolder = new RadioButtonQuestionVH(v);
+                break;
+        }
+        return viewHolder;
+
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+
+        switch (viewHolder.getItemViewType()) {
+            case RADIO_BUTTON:
+                RadioButtonQuestionVH rbvh = (RadioButtonQuestionVH) viewHolder;
+                configureRadioButtonQuestionVH(rbvh, position);
+                break;
+            case CHECK_BOX:
+                CheckBoxQuestionVH cbvh = (CheckBoxQuestionVH) viewHolder;
+                configureCheckBoxQuestionVH(cbvh, position);
+                break;
+            default:
+                RadioButtonQuestionVH rbvh2 = (RadioButtonQuestionVH) viewHolder;
+                configureRadioButtonQuestionVH(rbvh2, position);
+                break;
+        }
+
+
+    }
+
+    private void configureRadioButtonQuestionVH(RadioButtonQuestionVH rbvh, int position) {
+        RadioButtonQuestion rbq = (RadioButtonQuestion) questions.get(position);
+        rbvh.question.setText(rbq.question);
+        rbvh.illustration.setImageResource(rbq.photoId);
+
+        rbvh.buttonA.setText(rbq.option_a);
+        rbvh.buttonB.setText(rbq.option_b);
+        rbvh.buttonC.setText(rbq.option_c);
+        rbvh.buttonD.setText(rbq.option_d);
+
+        rbvh.buttonA.setTag(position);
+        rbvh.buttonB.setTag(position);
+        rbvh.buttonC.setTag(position);
+        rbvh.buttonD.setTag(position);
+    }
+
+    private void configureCheckBoxQuestionVH(CheckBoxQuestionVH cbqvh, int position) {
+        CheckBoxQuestion cbq = (CheckBoxQuestion) questions.get(position);
+        cbqvh.question.setText(cbq.question);
+        cbqvh.illustration.setImageResource(cbq.photoId);
+
+        cbqvh.boxA.setText(cbq.option_a);
+        cbqvh.boxB.setText(cbq.option_b);
+        cbqvh.boxC.setText(cbq.option_c);
+        cbqvh.boxD.setText(cbq.option_d);
+
+        cbqvh.boxA.setTag(position);
+        cbqvh.boxB.setTag(position);
+        cbqvh.boxC.setTag(position);
+        cbqvh.boxD.setTag(position);
     }
 
 }
