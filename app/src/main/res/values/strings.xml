@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">PregnancyQuiz</string>
+    <string name="app_name">Pregnancy Quiz</string>
+    <string name="question">Hur ofta slår hjärtat på ett barn?</string>
+    <string name="option_a">Option A</string>
+    <string name="option_b">Option B</string>
+    <string name="option_c">Option C</string>
+    <string name="option_d">Option D</string>
+    <string name="hint">Enter your name</string>
+    <string name="title_part_1">PREGNANCY</string>
+    <string name="title_part_2">QUIZ</string>
+    <string name="score_button">score</string>
 </resources>

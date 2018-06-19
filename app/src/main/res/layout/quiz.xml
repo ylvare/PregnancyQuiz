@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,35 +14,32 @@
         android:padding="8dp">
 
         <TextView
+            style="@style/MyQuizStyling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
             android:gravity="left"
-            android:text="PREGNANCY"
-            android:textSize="30sp" />
+            android:text="@string/title_part_1" />
 
         <TextView
+            style="@style/MyQuizStyling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            app:fontFamily="sans-serif"
             android:gravity="left"
-            android:text="QUIZ"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp" />
+            android:text="@string/title_part_2"
+            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
 
-
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#616161" />
+        style="@style/MyQuizBorderTitleStyling"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"></android.support.v7.widget.RecyclerView>
+        android:layout_weight="4" />
 
 </LinearLayout>
 

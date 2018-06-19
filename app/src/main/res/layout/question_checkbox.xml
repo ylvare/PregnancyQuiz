@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/question_checkbox"
-    >
+    android:id="@+id/question_checkbox">
 
     <RelativeLayout
+        style="@style/MyQuestionStyling"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         >
 
         <ImageView
-            android:layout_width="100dp"
+            style="@style/MyQuestionImageStyling"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             android:id="@+id/illustration"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
             android:src="@drawable/baby"
             />
 
         <TextView
+            style="@style/MyQuestionTextViewStyling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/question"
             android:layout_toRightOf="@+id/illustration"
             android:layout_alignParentTop="true"
-            android:text="Hur ofta slår hjärtat på ett barn?"
-            android:layout_marginBottom="10dp"
+            android:text="@string/question"
             />
 
         <LinearLayout
@@ -43,34 +40,34 @@
 
         <CheckBox
             android:id="@+id/option-a"
-            style="@style/MyQuestionStyling"
+            style="@style/MyQuestionButtonStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option A"
+            android:text="@string/option_a"
             android:onClick="answerCheckBox"/>
 
         <CheckBox
             android:id="@+id/option-b"
-            style="@style/MyQuestionStyling"
+            style="@style/MyQuestionButtonStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option B"
+            android:text="@string/option_b"
             android:onClick="answerCheckBox"/>
 
         <CheckBox
-            style="@style/MyQuestionStyling"
+            style="@style/MyQuestionButtonStyling"
             android:id="@+id/option-c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option C"
+            android:text="@string/option_c"
             android:onClick="answerCheckBox"/>
 
         <CheckBox
-            style="@style/MyQuestionStyling"
+            style="@style/MyQuestionButtonStyling"
             android:id="@+id/option-d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option D"
+            android:text="@string/option_d"
             android:onClick="answerCheckBox"/>
         </LinearLayout>
 
