@@ -3,39 +3,20 @@ package com.example.android.pregnancyquiz;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.TextView;
 
 import java.util.List;
 
+public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-    public class FooterVH extends RecyclerView.ViewHolder {
-
-        CardView footer;
-        Button button;
-
-        FooterVH(View itemView) {
-            super(itemView);
-            footer = (CardView) itemView.findViewById(R.id.footer);
-            button = (Button) itemView.findViewById(R.id.score);
-        }
-    }
-
-
+    private final int RADIO_BUTTON = 0, CHECK_BOX = 1, FOOTER = 2;
     List<Object> questions;
 
-    public RVAdapter(List<Object> questions) {
+    public Adapter(List<Object> questions) {
         this.questions = questions;
     }
-
-    private final int RADIO_BUTTON = 0, CHECK_BOX = 1, FOOTER=2;
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -54,8 +35,8 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         } else if (questions.get(position) instanceof CheckBoxQuestion) {
             return CHECK_BOX;
         } else if (questions.get(position) instanceof Quiz.Footer) {
-        return FOOTER;
-    }
+            return FOOTER;
+        }
         return -1;
     }
 
@@ -107,8 +88,6 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             default:
                 break;
         }
-
-
     }
 
     private void configureRadioButtonQuestionVH(RadioButtonQuestionVH rbvh, int position) {
@@ -141,6 +120,18 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         cbqvh.boxB.setTag(position);
         cbqvh.boxC.setTag(position);
         cbqvh.boxD.setTag(position);
+    }
+
+    public class FooterVH extends RecyclerView.ViewHolder {
+
+        CardView footer;
+        Button button;
+
+        FooterVH(View itemView) {
+            super(itemView);
+            footer = itemView.findViewById(R.id.footer);
+            button = itemView.findViewById(R.id.score);
+        }
     }
 
 }

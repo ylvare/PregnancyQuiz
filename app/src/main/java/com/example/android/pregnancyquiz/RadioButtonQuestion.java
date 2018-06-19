@@ -20,6 +20,5 @@ public class RadioButtonQuestion {
             this.option_c=option_c;
             this.option_d=option_d;
             this.photoId= photoId;
-
         }
     }

@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:id="@+id/footer"
-    >
-
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
         <LinearLayout
             style="@style/MyFooterStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <EditText
-                style="@style/MyFooterEnterNameStyling"
                 android:id="@+id/name"
+                style="@style/MyFooterEnterNameStyling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:hint="@string/hint"
                 android:inputType="textPersonName|textCapWords" />
             <Button
-                style="@style/MyFooterButtonStyling"
                 android:id="@+id/score"
+                style="@style/MyFooterButtonStyling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/score_button"
                 android:layout_weight="1"
-                android:onClick="calculateScore" />
+                android:onClick="calculateScore"
+                android:text="@string/score_button" />
         </LinearLayout>
 </android.support.v7.widget.CardView>

@@ -1,76 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/question_checkbox"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/question_checkbox">
-
+    android:layout_height="wrap_content">
     <RelativeLayout
         style="@style/MyQuestionStyling"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-
+        android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/illustration"
             style="@style/MyQuestionImageStyling"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:id="@+id/illustration"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/baby"
-            />
-
+            android:scaleType="centerCrop"
+            android:src="@drawable/baby" />
         <TextView
+            android:id="@+id/question"
             style="@style/MyQuestionTextViewStyling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/question"
-            android:layout_toRightOf="@+id/illustration"
             android:layout_alignParentTop="true"
-            android:text="@string/question"
-            />
-
+            android:layout_toRightOf="@+id/illustration"
+            android:text="@string/question" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/illustration"
             android:layout_below="@+id/question"
+            android:layout_toRightOf="@+id/illustration"
             android:gravity="left"
             android:orientation="vertical">
-
         <CheckBox
             android:id="@+id/option-a"
             style="@style/MyQuestionButtonStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/option_a"
-            android:onClick="answerCheckBox"/>
-
+            android:onClick="answerCheckBox"
+            android:text="@string/option_a" />
         <CheckBox
             android:id="@+id/option-b"
             style="@style/MyQuestionButtonStyling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/option_b"
-            android:onClick="answerCheckBox"/>
-
+            android:onClick="answerCheckBox"
+            android:text="@string/option_b" />
         <CheckBox
-            style="@style/MyQuestionButtonStyling"
             android:id="@+id/option-c"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/option_c"
-            android:onClick="answerCheckBox"/>
-
-        <CheckBox
             style="@style/MyQuestionButtonStyling"
-            android:id="@+id/option-d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/option_d"
-            android:onClick="answerCheckBox"/>
+            android:onClick="answerCheckBox"
+            android:text="@string/option_c" />
+        <CheckBox
+            android:id="@+id/option-d"
+            style="@style/MyQuestionButtonStyling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="answerCheckBox"
+            android:text="@string/option_d" />
         </LinearLayout>
-
     </RelativeLayout>
-
 </android.support.v7.widget.CardView>

@@ -1,21 +1,16 @@
 package com.example.android.pregnancyquiz;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 
 public class Quiz extends Activity {
 
@@ -27,20 +22,14 @@ public class Quiz extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz);
-        rv = (RecyclerView) findViewById(R.id.rv);
-
+        rv = findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
-
         initializeData();
         initializeAdapter();
     }
 
-    public String getName() {
-        String name = ((EditText) findViewById(R.id.name)).getText().toString();
-        return name;
-    }
 
     public class Footer {
         Footer() {
@@ -62,14 +51,12 @@ public class Quiz extends Activity {
         questions.add(new RadioButtonQuestion("At what week can the baby in the uterus hear the outside world?", "", "D", "4 weeks", "12 weeks", "16 weeks", "18 weeks", R.drawable.baby));
         questions.add(new CheckBoxQuestion("What happens typically in week 12 of the foetus development?", emptyAnswers2, correctAnswer2, "The baby can swallow", "The baby urinates for the first time", "The baby can clench his fist", "The baby can hickup", R.drawable.baby));
         questions.add(new Footer());
-
     }
 
     private void initializeAdapter() {
-        RVAdapter adapter = new RVAdapter(questions);
+        Adapter adapter = new Adapter(questions);
         rv.setAdapter(adapter);
     }
-
 
     public void answerRadioButton(View view) {
         RadioButtonQuestion rbq = (RadioButtonQuestion) questions.get((int) view.getTag());
@@ -134,16 +121,13 @@ public class Quiz extends Activity {
             }
 
             if (question instanceof CheckBoxQuestion) {
-
                 Boolean [] answers_entered = ((CheckBoxQuestion) question).answers_entered;
                 Boolean [] correct_answers = ((CheckBoxQuestion) question).correct_answers;
                 if(Arrays.equals(answers_entered,correct_answers)){
                     score = score+1;
                 }
             }
-
         }
-
         toast();
     }
 
@@ -152,8 +136,6 @@ public class Quiz extends Activity {
         int nrQuestions = questions.size()-1;
         String name = ((EditText) findViewById(R.id.name)).getText().toString();
         String text =  name + ", you got " + score + " points out of " + nrQuestions + " possible!";
-        //CharSequence text = "Invalid order quantity";
-
         int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();

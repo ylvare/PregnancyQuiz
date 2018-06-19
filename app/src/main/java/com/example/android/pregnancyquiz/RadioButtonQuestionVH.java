@@ -19,12 +19,12 @@ public class RadioButtonQuestionVH extends RecyclerView.ViewHolder {
 
     RadioButtonQuestionVH(View itemView) {
         super(itemView);
-        question_radiobutton = (CardView) itemView.findViewById(R.id.question_radiobutton);
-        question = (TextView) itemView.findViewById(R.id.question);
-        illustration = (ImageView) itemView.findViewById(R.id.illustration);
-        buttonA = (RadioButton) itemView.findViewById(R.id.option_a);
-        buttonB = (RadioButton) itemView.findViewById(R.id.option_b);
-        buttonC = (RadioButton) itemView.findViewById(R.id.option_c);
-        buttonD = (RadioButton) itemView.findViewById(R.id.option_d);
+        question_radiobutton = itemView.findViewById(R.id.question_radiobutton);
+        question = itemView.findViewById(R.id.question);
+        illustration = itemView.findViewById(R.id.illustration);
+        buttonA = itemView.findViewById(R.id.option_a);
+        buttonB = itemView.findViewById(R.id.option_b);
+        buttonC = itemView.findViewById(R.id.option_c);
+        buttonD = itemView.findViewById(R.id.option_d);
     }
 }

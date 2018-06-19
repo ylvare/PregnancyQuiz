@@ -7,7 +7,6 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 public class CheckBoxQuestionVH extends RecyclerView.ViewHolder {
 
     CardView question_checkbox;
@@ -20,12 +19,12 @@ public class CheckBoxQuestionVH extends RecyclerView.ViewHolder {
 
     CheckBoxQuestionVH(View itemView) {
         super(itemView);
-        question_checkbox = (CardView) itemView.findViewById(R.id.question_checkbox);
-        question = (TextView) itemView.findViewById(R.id.question);
-        illustration = (ImageView) itemView.findViewById(R.id.illustration);
-        boxA = (CheckBox) itemView.findViewById(R.id.option_a);
-        boxB = (CheckBox) itemView.findViewById(R.id.option_b);
-        boxC = (CheckBox) itemView.findViewById(R.id.option_c);
-        boxD = (CheckBox) itemView.findViewById(R.id.option_d);
+        question_checkbox = itemView.findViewById(R.id.question_checkbox);
+        question = itemView.findViewById(R.id.question);
+        illustration = itemView.findViewById(R.id.illustration);
+        boxA = itemView.findViewById(R.id.option_a);
+        boxB = itemView.findViewById(R.id.option_b);
+        boxC = itemView.findViewById(R.id.option_c);
+        boxD = itemView.findViewById(R.id.option_d);
     }
 }
