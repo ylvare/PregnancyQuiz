@@ -95,10 +95,10 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         rbvh.question.setText(rbq.question);
         rbvh.illustration.setImageResource(rbq.photoId);
 
-        rbvh.buttonA.setText(rbq.option_a);
-        rbvh.buttonB.setText(rbq.option_b);
-        rbvh.buttonC.setText(rbq.option_c);
-        rbvh.buttonD.setText(rbq.option_d);
+        rbvh.buttonA.setText(rbq.optionA);
+        rbvh.buttonB.setText(rbq.optionB);
+        rbvh.buttonC.setText(rbq.optionC);
+        rbvh.buttonD.setText(rbq.optionD);
 
         rbvh.buttonA.setTag(position);
         rbvh.buttonB.setTag(position);
@@ -111,10 +111,10 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         cbqvh.question.setText(cbq.question);
         cbqvh.illustration.setImageResource(cbq.photoId);
 
-        cbqvh.boxA.setText(cbq.option_a);
-        cbqvh.boxB.setText(cbq.option_b);
-        cbqvh.boxC.setText(cbq.option_c);
-        cbqvh.boxD.setText(cbq.option_d);
+        cbqvh.boxA.setText(cbq.optionA);
+        cbqvh.boxB.setText(cbq.optionB);
+        cbqvh.boxC.setText(cbq.optionC);
+        cbqvh.boxD.setText(cbq.optionD);
 
         cbqvh.boxA.setTag(position);
         cbqvh.boxB.setTag(position);

@@ -62,14 +62,13 @@ public class Quiz extends Activity {
         RadioButtonQuestion rbq = (RadioButtonQuestion) questions.get((int) view.getTag());
 
         if (view.getId() == R.id.option_a) {
-            rbq.answer_entered = "A";
+            rbq.answerEntered = Consts.OPTION_A;
         } else if (view.getId() == R.id.option_b) {
-            rbq.answer_entered = "B";
-        }
-        if (view.getId() == R.id.option_c) {
-            rbq.answer_entered = "C";
+            rbq.answerEntered = Consts.OPTION_B;
+        } else if (view.getId() == R.id.option_c) {
+            rbq.answerEntered = Consts.OPTION_C;
         } else if (view.getId() == R.id.option_d) {
-            rbq.answer_entered = "D";
+            rbq.answerEntered = Consts.OPTION_D;
         }
     }
 
@@ -79,51 +78,51 @@ public class Quiz extends Activity {
 
         if (view.getId() == R.id.option_a) {
             if (checked) {
-                cbq.answers_entered[0] = Boolean.TRUE;
+                cbq.answersEntered[Consts.BOX_A] = Boolean.TRUE;
             } else {
-                cbq.answers_entered[0] = Boolean.FALSE;
+                cbq.answersEntered[Consts.BOX_A] = Boolean.FALSE;
             }
         }
 
         if (view.getId() == R.id.option_b) {
             if (checked) {
-                cbq.answers_entered[1] = Boolean.TRUE;
+                cbq.answersEntered[Consts.BOX_B] = Boolean.TRUE;
             } else {
-                cbq.answers_entered[1] = Boolean.FALSE;
+                cbq.answersEntered[Consts.BOX_B] = Boolean.FALSE;
             }
         }
 
         if (view.getId() == R.id.option_c) {
             if (checked) {
-                cbq.answers_entered[2] = Boolean.TRUE;
+                cbq.answersEntered[Consts.BOX_C] = Boolean.TRUE;
             } else {
-                cbq.answers_entered[2] = Boolean.FALSE;
+                cbq.answersEntered[Consts.BOX_C] = Boolean.FALSE;
             }
         }
 
         if (view.getId() == R.id.option_d) {
             if (checked) {
-                cbq.answers_entered[3] = Boolean.TRUE;
+                cbq.answersEntered[Consts.BOX_D] = Boolean.TRUE;
             } else {
-                cbq.answers_entered[3] = Boolean.FALSE;
+                cbq.answersEntered[Consts.BOX_D] = Boolean.FALSE;
             }
         }
     }
 
     public void calculateScore(View view) {
-        score = 0;
+        score = Consts.ZERO_SCORE;
 
         for (Object question : questions) {
             if (question instanceof RadioButtonQuestion) {
-                if (((RadioButtonQuestion) question).answer_entered.equals (((RadioButtonQuestion) question).correct_answer)){
+                if (((RadioButtonQuestion) question).answerEntered.equals(((RadioButtonQuestion) question).correctAnswer)) {
                     score = score+1;
                 }
             }
 
             if (question instanceof CheckBoxQuestion) {
-                Boolean [] answers_entered = ((CheckBoxQuestion) question).answers_entered;
-                Boolean [] correct_answers = ((CheckBoxQuestion) question).correct_answers;
-                if(Arrays.equals(answers_entered,correct_answers)){
+                Boolean[] answersEntered = ((CheckBoxQuestion) question).answersEntered;
+                Boolean[] correctAnswers = ((CheckBoxQuestion) question).correctAnswers;
+                if (Arrays.equals(answersEntered, correctAnswers)) {
                     score = score+1;
                 }
             }
@@ -140,4 +139,26 @@ public class Quiz extends Activity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
+
+    public final class Consts {
+
+        public static final int ZERO_SCORE = 0;
+
+        public static final int BOX_A = 0;
+        public static final int BOX_B = 1;
+        public static final int BOX_C = 2;
+        public static final int BOX_D = 3;
+
+
+        public static final String OPTION_A = "A";
+        public static final String OPTION_B = "B";
+        public static final String OPTION_C = "C";
+        public static final String OPTION_D = "D";
+
+        private Consts() {
+
+            throw new AssertionError();
+        }
+    }
 }
+
